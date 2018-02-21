@@ -49,6 +49,8 @@
         overflow: hidden;
       }
     </style>
+
+      <link rel='stylesheet' href='{{asset("vendor/crudbooster/assets/css/dafu-style.css")}}'/>
   </head>
 
   <body class="login-page">

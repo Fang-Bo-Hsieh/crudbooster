@@ -1,0 +1,410 @@
+/*Login-page*/
+.login-page{
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', STXihei, STHeiti, '华文细黑', 'Lantinghei SC', Lantinghei, 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Arial Unicode MS', sans-serif;
+}
+
+.login-box, .register-box {
+    float: right;
+    margin: 16% auto;
+}
+
+.login-box-body {
+    box-shadow: none !important;
+    background: transparent !important;;
+    color: #b7b7b7 !important;
+}
+.login-box-body, .register-box-body {
+    background: none !important;
+    padding: 0px !important;
+    border-top: 0;
+    color: #b7b7b7 !important;
+}
+
+.login-page .form-control {
+    height: 50px;
+    border-radius: 4px !important;
+}
+.form-control-feedback {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+}
+.has-feedback .form-control {
+    padding-left: 42.5px;
+}
+.login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
+    color: #4741b6 !important;
+}
+
+.login-page .btn {
+    height: 50px;
+    border-radius: 4px !important;
+}
+.login-page .btn-primary{
+    background: #ffe800;
+    border: none;
+    color: #4741b6;
+    border-radius: 4px;
+}
+.login-page .btn-primary i{
+    display: none;
+}
+.login-page a{
+    color: #fff;
+}
+.login-page a:hover,.login-page a:active,.login-page a:focus {
+    color: #ffe800;
+}
+
+.bg-yellow, .callout.callout-warning, .alert-warning, .label-warning, .modal-warning .modal-body {
+    background-color: transparent !important;
+    border: none;
+    text-align: center;
+    color: #ccc !important;
+}
+@media screen and (max-width: 1400px) {
+    .login-box, .register-box {
+        margin: 7% auto;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .login-page {
+        width: 96%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .login-box, .register-box {
+        float: none;
+    }
+}
+
+
+/*Management-page*/
+body, .main-header .logo, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Microsoft YaHei New', 'Microsoft Yahei', '微软雅黑', STXihei, STHeiti, '华文细黑', 'Lantinghei SC', Lantinghei, 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Arial Unicode MS', sans-serif;
+}
+.skin-blue-light .main-header .logo {
+    background-color: #381639;
+}
+.skin-blue-light .main-header .navbar {
+    background-color: #381639;
+}
+
+.skin-blue-light .user-panel > .info, .skin-blue-light .user-panel > .info > a {
+    color: #fff;
+}
+.text-success {
+    color: #00a65a;
+}
+.skin-blue-light .sidebar a {
+    color: #fff;
+}
+
+.skin-blue-light .sidebar-menu > li.header {
+    color: #333;
+    background: #FFE800;
+    border-bottom: 1px solid #e6d202;
+}
+
+.skin-blue-light .sidebar-menu > li:hover > a, .skin-blue-light .sidebar-menu > li.active > a {
+    color: #333;
+    background: #FFE800;
+}
+.skin-blue-light .content-wrapper, .skin-blue-light .main-footer {
+    border-left: none;
+}
+.content-wrapper, .right-side {
+    background-color: #f1f1f1;
+}
+.skin-blue-light .main-footer {
+    border-top-color: #e2e2e2;
+}
+.main-footer {
+    background: #f1f1f1;
+}
+
+.main-footer strong {
+    font-weight: normal;
+}
+
+.skin-blue-light .sidebar-menu > li > .treeview-menu {
+    background: #1a0e1b;
+}
+
+.skin-blue-light .treeview-menu > li > a {
+    color: #d2d6de;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+    padding: 8px 5px 8px 25px;
+}
+.skin-blue-light .wrapper, .skin-blue-light .main-sidebar, .skin-blue-light .left-side {
+    background-color: #381639;
+}
+
+.skin-blue-light .main-header .logo:hover {
+    background-color: #381639;
+}
+
+.skin-blue-light .main-header .navbar .sidebar-toggle:hover {
+    background-color: #FFE800;
+}
+
+.skin-blue-light .main-header .navbar .sidebar-toggle:hover {
+    color: #333;
+}
+
+.skin-blue-light .main-header li.user-header {
+    background-color: #381639;
+}
+
+.btn-primary {
+    background-color: #633265;
+    border-color: #633265;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover {
+    background-color: #381639;
+    border-color: #381639;
+}
+
+.btn-success {
+    background-color: #574a8e;
+    border-color: #574a8e;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success.hover {
+    background-color: #483d73;
+    border-color: #483d73;
+}
+
+.skin-blue-light .treeview-menu > li.active > a, .skin-blue-light .treeview-menu > li > a:hover {
+    color: #FFE800;
+}
+
+
+/* tree */
+
+.tree {
+    font-family: 'Avenir Book', sans-serif;
+    width:1000px;
+    margin:0 auto;
+}
+
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; height: 20px;
+}
+
+/************************************************
+ * Third Level Styles
+ ************************************************/
+
+.tree ul ul ul {
+    max-width:140px;
+}
+.tree ul ul ul li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 0 5px 10px 5px;
+    border-left: 1px solid #ccc;
+    border-left:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    margin-left:10px;
+    top:-10px;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree ul ul ul li:before {
+    border-top: 1px solid #ccc;
+    position:relative;
+    top:20%;
+    width:10%;
+}
+.tree ul ul ul li::after{
+    right: auto;
+    left: -1px;
+    border-left: 1px solid #ccc;
+    border-bottom:1px;
+    height:70px;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree ul ul ul li:only-child::after, .tree ul ul ul li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree ul ul ul li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree ul ul ul li:first-child::before,
+.tree ul ul ul li:last-child::after{
+    border:none;
+
+}
+
+.tree ul ul ul li:last-child::after {
+    border-bottom:1px solid #ccc;
+    top:-52px;
+    width:7px;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree ul ul ul li:last-child::before{
+    border-right: 0;
+    border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+
+}
+.tree ul ul ul li:first-child::after{
+    border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul ul::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0px;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 100;
+}
+
+.tree ul ul ul li img {
+    margin:0;
+    padding:0;
+    padding-right:3px;
+}
+
+/*******************************/
+
+.tree li a{
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+    background: #f7ecb5; color: #000; border: 1px solid #f7ecb5;
+}
+
+.tree li a.self {
+    border-color: #00acd6;
+    background-color: #00acd6;
+    color: #f7ecb5;
+    font-size: 16px;
+}
+
+.tree ul ul ul li a:hover {
+    border-color: #ccc;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
+.tree li a:hover+ul ul::before {
+    border-color:  #f7ecb5;
+}
+
+.tree li a {
+    max-width:130px;
+}
+.tree li a img {
+    float:left;
+    margin-bottom:5px;
+    border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    max-width: 110px;
+}
