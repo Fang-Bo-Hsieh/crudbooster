@@ -96,9 +96,9 @@ class AdminController extends CBController {
 			$cb_hook_session = new \App\Http\Controllers\CBHook;
 			$cb_hook_session->afterLogin();
 
-			$dashboard = CRUDBooster::sidebarDashboard();
-			return  redirect($dashboard->url);
-			//return redirect(CRUDBooster::adminPath());
+//			$dashboard = CRUDBooster::sidebarDashboard();
+//			return  redirect($dashboard->url);
+			return redirect(CRUDBooster::adminPath());
 		}else{
 			return redirect()->route('getLogin')->with('message', trans('crudbooster.alert_password_wrong'));			
 		}		
