@@ -28,8 +28,11 @@
                 {{--@if($dashboard)--}}
                     {{--<li data-id='{{$dashboard->id}}' class="{{ (Request::is(config('crudbooster.ADMIN_PATH'))) ? 'active' : '' }}"><a href='{{CRUDBooster::adminPath()}}' class='{{($dashboard->color)?"text-".$dashboard->color:""}}' ><i class='fa fa-dashboard'></i> <span>{{trans("crudbooster.text_dashboard")}}</span> </a></li>--}}
                 {{--@endif--}}
+                {{--@if($dashboard)--}}
+                    {{--<li data-id='{{$dashboard->id}}' class="{{ (Request::is(config('crudbooster.ADMIN_PATH'))) ? 'active' : '' }}"><a href='{{$dashboard->url}}' class='{{($dashboard->color)?"text-".$dashboard->color:""}}' ><i class='fa fa-dashboard'></i> <span>{{trans("crudbooster.text_dashboard")}}</span> </a></li>--}}
+                {{--@endif--}}
                 @if($dashboard)
-                    <li data-id='{{$dashboard->id}}' class="{{ (Request::is(config('crudbooster.ADMIN_PATH'))) ? 'active' : '' }}"><a href='{{$dashboard->url}}' class='{{($dashboard->color)?"text-".$dashboard->color:""}}' ><i class='fa fa-dashboard'></i> <span>{{trans("crudbooster.text_dashboard")}}</span> </a></li>
+                    <li data-id='{{$dashboard->id}}'data-url="{{$dashboard->url}}" class="{{ (Request::url() == $dashboard->url) ? 'active' : '' }}"><a href='{{$dashboard->url}}' class='{{($dashboard->color)?"text-".$dashboard->color:""}}' ><i class='fa fa-dashboard'></i> <span>{{$dashboard->name}}</span> </a></li>
                 @endif
 
                 @foreach(CRUDBooster::sidebarMenu() as $menu)

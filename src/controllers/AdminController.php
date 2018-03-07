@@ -96,9 +96,17 @@ class AdminController extends CBController {
 			$cb_hook_session = new \App\Http\Controllers\CBHook;
 			$cb_hook_session->afterLogin();
 
-//			$dashboard = CRUDBooster::sidebarDashboard();
-//			return  redirect($dashboard->url);
-			return redirect(CRUDBooster::adminPath());
+			// 取得不同角色權限的menu，找出dashboard
+			/**
+			 * crud booster 5.4 menu dashboard限制
+			 * 要新增不同privileges的dashboard步驟:
+			 * 1.先確定該角色權限是否有進入該模塊的權限
+			 * 1.先新增一個menu dashboard要設為0 (否則id_cmd_privileges會為1，會刪掉superadmin的dashboard)
+			 * 2.進入編輯頁，將dashboard設為1
+			 */
+			$dashboard = CRUDBooster::sidebarDashboard();
+			return  redirect($dashboard->url);
+			//return redirect(CRUDBooster::adminPath());
 		}else{
 			return redirect()->route('getLogin')->with('message', trans('crudbooster.alert_password_wrong'));			
 		}		
