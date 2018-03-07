@@ -47,26 +47,31 @@ Route::group(['middleware'=>['web'],'prefix'=>config('crudbooster.ADMIN_PATH'),'
 
 // ROUTER FOR OWN CONTROLLER FROM CB
 Route::group(['middleware'=>['web','\crocodicstudio\crudbooster\middlewares\CBBackend'],'prefix'=>config('crudbooster.ADMIN_PATH'),'namespace'=>'App\Http\Controllers'], function () use ($namespace) {
-		
+
+		// 新增一個預設首頁，先暫時這樣處理網址打上/vas時，無法回到dashboard的問題
 		if(Request::is(config('crudbooster.ADMIN_PATH'))) {
-			$menus = DB::table('cms_menus')->where('is_dashboard',1)->first();
-			if($menus) {
-				if($menus->type == 'Statistic') {
-					Route::get('/','\crocodicstudio\crudbooster\controllers\StatisticBuilderController@getDashboard');					
-				}elseif ($menus->type == 'Module') {
-					$module = CRUDBooster::first('cms_moduls',['path'=>$menus->path]);
-					Route::get('/',$module->controller.'@getIndex');
-				}elseif ($menus->type == 'Route') {
-					$action = str_replace("Controller","Controller@",$menus->path);
-					$action = str_replace(['Get','Post'],['get','post'],$action);
-					Route::get('/',$action);
-				}elseif ($menus->type == 'Controller & Method') {
-					Route::get('/',$menus->path);
-				}elseif ($menus->type == 'URL') {
-					redirect($menus->path);
-				}
-			}
+			Route::get('/', ['uses'=>'\crocodicstudio\crudbooster\controllers\AdminController@getIndex','as'=>'myIndex']);
 		}
+
+//		if(Request::is(config('crudbooster.ADMIN_PATH'))) {
+//			$menus = DB::table('cms_menus')->where('is_dashboard',1)->first();
+//			if($menus) {
+//				if($menus->type == 'Statistic') {
+//					Route::get('/','\crocodicstudio\crudbooster\controllers\StatisticBuilderController@getDashboard');
+//				}elseif ($menus->type == 'Module') {
+//					$module = CRUDBooster::first('cms_moduls',['path'=>$menus->path]);
+//					Route::get('/',$module->controller.'@getIndex');
+//				}elseif ($menus->type == 'Route') {
+//					$action = str_replace("Controller","Controller@",$menus->path);
+//					$action = str_replace(['Get','Post'],['get','post'],$action);
+//					Route::get('/',$action);
+//				}elseif ($menus->type == 'Controller & Method') {
+//					Route::get('/',$menus->path);
+//				}elseif ($menus->type == 'URL') {
+//					redirect($menus->path);
+//				}
+//			}
+//		}
 
 		try {
 			$moduls = DB::table('cms_moduls')

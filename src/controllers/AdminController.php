@@ -9,11 +9,37 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use CRUDBooster;
 
-class AdminController extends CBController {	
+class AdminController extends CBController {
+
+	public function myIndex() {
+//		$myId = CRUDBooster::myId();
+//		logger()->debug('$myId='.$myId);
+//		$idCmsPrivileges = CRUDBooster::myPrivilegeId();
+//		logger()->debug('$idCmsPrivileges='.$idCmsPrivileges);
+//		$menus = DB::table('cms_menus')->where('is_dashboard',1)->where('id_cms_privileges',$idCmsPrivileges)->first();
+//		if($menus) {
+//			logger()->debug('$menus='.json_encode($menus));
+//			if($menus->type == 'Statistic') {
+//				return App::call('\crocodicstudio\crudbooster\controllers\StatisticBuilderController@getDashboard');
+//			}elseif ($menus->type == 'Module') {
+//				$module = CRUDBooster::first('cms_moduls',['path'=>$menus->path]);
+//				return App::call('App\Http\Controllers\\'.$module->controller.'@getIndex');
+//			}elseif ($menus->type == 'Route') {
+//				$action = str_replace("Controller","Controller@",$menus->path);
+//				$action = str_replace(['Get','Post'],['get','post'],$action);
+//				logger()->debug('$action='.$action);
+////				return App::call('App\Http\Controllers\\'.$action);
+//			}elseif ($menus->type == 'Controller & Method') {
+//				return App::call('App\Http\Controllers\\'.$menus->path);
+//			}elseif ($menus->type == 'URL') {
+//				return redirect($menus->path);
+//			}
+//		}
+	}
 
 	function getIndex() {
 		$data = array();			
-		$data['page_title']       = '<strong>Dashboard</strong>';				
+//		$data['page_title']       = '<strong>Dashboard</strong>';
 		return view('crudbooster::home',$data);
 	}
 
