@@ -694,18 +694,24 @@ class CRUDBooster  {
 			}			
 			$table = CRUDBooster::parseSqlTable($table);
 
-			if(!$table['table']) throw new \Exception("parseSqlTable can't determine the table");							
-			$query = config('database.connections.' . config('database.default') . '.driver') == 'pgsql' ?
-                     "select * from information_schema.key_column_usage WHERE TABLE_NAME = '$table[table]'":
-                     "select * from information_schema.COLUMNS where TABLE_SCHEMA = '$table[database]' and TABLE_NAME = '$table[table]' and COLUMN_KEY = 'PRI'";
+			if(!$table['table']) throw new \Exception("parseSqlTable can't determine the table");
+			$query = "";
+			if(config('database.default') == 'pgsql'){
+				$query = "select * from information_schema.key_column_usage WHERE TABLE_NAME = '$table[table]'";
+			} else {
+				$query = "select * from information_schema.COLUMNS where TABLE_SCHEMA = '$table[database]' and TABLE_NAME = '$table[table]' and COLUMN_KEY = 'PRI'";
+			}
 			$keys = DB::select($query);
 			$primary_key = $keys[0]->COLUMN_NAME;
-			if($primary_key) {				
+			if($primary_key === null) $primary_key = $keys[0]->column_name;
+			if($primary_key) {
 				self::putCache('table_'.$table,'primary_key',$primary_key);
 				return $primary_key;
 			}else{
 				return 'id';
-			}			
+			}
+
+
 		}
 
 		public static function newId($table) {
