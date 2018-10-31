@@ -696,7 +696,7 @@ class CRUDBooster  {
 
 			if(!$table['table']) throw new \Exception("parseSqlTable can't determine the table");
 			$query = "";
-			if(config('database.default') == 'pgsql'){
+			if(\Config::get('database.default') == 'pgsql'){
 				$query = "select * from information_schema.key_column_usage WHERE TABLE_NAME = '$table[table]'";
 			} else {
 				$query = "select * from information_schema.COLUMNS where TABLE_SCHEMA = '$table[database]' and TABLE_NAME = '$table[table]' and COLUMN_KEY = 'PRI'";
@@ -710,8 +710,7 @@ class CRUDBooster  {
 			}else{
 				return 'id';
 			}
-
-
+			
 		}
 
 		public static function newId($table) {
